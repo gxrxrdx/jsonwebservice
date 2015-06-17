@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="com.jaxws.json.codec"
+    nsURI="http://schemas.jsonsoap.org/wsdl/json/" nsPrefix="emf.model.jsonwebservice">
+  <eClassifiers xsi:type="ecore:EClass" name="JSONCodec">
+    <eOperations name="decode">
+      <eAnnotations source="JSONDecoder" references="#//decode/JSONDecoder/getWSMessage">
+        <details key="Map" value="getWSMessage"/>
+      </eAnnotations>
+      <eParameters name="InputStream" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      <eParameters name="sContentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="com.sun.xml.ws.api.message.Packet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
+    <eOperations name="encode">
+      <eParameters name="com.sun.xml.ws.api.message.Packet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      <eParameters name="OutputStream" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jsonContentType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//JSONCodec"/>
+  </eClassifiers>
+  <eSubpackages name="decode">
+    <eClassifiers xsi:type="ecore:EClass" name="JSONDecoder">
+      <eOperations name="getWSMessage"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="encode">
+    <eClassifiers xsi:type="ecore:EClass" name="JSONEncoder">
+      <eOperations name="encode"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
